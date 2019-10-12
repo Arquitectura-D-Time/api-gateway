@@ -8,9 +8,16 @@ import {
 	usersMutations,
 	usersQueries,
 	usersTypeDef
-} from './schedule/typeDefs';
+} from './schedule/horario/typeDefs';
 
-import usersResolvers from './schedule/resolvers';
+import {
+	usersMutations,
+	usersQueries,
+	usersTypeDef
+} from './schedule/agendadas/typeDefs';
+
+import usersResolvers from './schedule/horario/resolvers';
+import usersResolvers from './schedule/agendadas/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
