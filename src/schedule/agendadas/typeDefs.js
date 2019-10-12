@@ -1,4 +1,4 @@
-export const horarioTypeDef = `
+export const agendadasTypeDef = `
 type Agendadas {
 	IDtutoria:      Int!
 	IDalumno:       Int! 

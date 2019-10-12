@@ -5,31 +5,34 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities';
 
 import {
-	usersMutations,
-	usersQueries,
-	usersTypeDef
+	horarioMutations,
+	horarioQueries,
+	horarioTypeDef
 } from './schedule/horario/typeDefs';
 
 import {
-	usersMutations,
-	usersQueries,
-	usersTypeDef
+	agendadasMutations,
+	agendadasQueries,
+	agendadasTypeDef
 } from './schedule/agendadas/typeDefs';
 
-import usersResolvers from './schedule/horario/resolvers';
-import usersResolvers from './schedule/agendadas/resolvers';
+import horarioResolvers from './schedule/horario/resolvers';
+import agendadasResolvers from './schedule/agendadas/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		usersTypeDef
+		horarioTypeDef,
+		agendadasTypeDef
 	],
 	[
-		usersQueries
+		horarioQueries,
+		agendadasQueries
 	],
 	[
-		usersMutations
+		horarioMutations,
+		agendadasMutations
 	]
 );
 
@@ -38,6 +41,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		usersResolvers
+		horarioResolvers,
+		agendadasResolvers
 	)
 });
