@@ -12,5 +12,7 @@ services:
       HORARIO_ENTRY: 'horario'
       AGENDADAS_ENTRY: 'agendadas'
 
+      #tty: verdadero
+
     ports:
       - '5000:5000'
