@@ -8,7 +8,7 @@ const resolvers = {
 		allHorarios: (_) =>
 			getRequest(URL, ''),
 		horarioById: (_, { IDtutoria }) =>
-			generalRequest(`${URL}/${IDtutoria}`, 'GET'),
+			generalRequest(`${URL}/id/${IDtutoria}`, 'GET'),
 		horarioByNombre: (_, { NombreMateria }) =>
 			generalRequest(`${URL}/${NombreMateria}`, 'GET'),
 		horarioByFecha: (_, { Fecha }) =>
