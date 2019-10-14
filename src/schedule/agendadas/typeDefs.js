@@ -5,13 +5,13 @@ type Agendadas {
 	NombreAlumno:  	String! 
 }
 
-input AgendasInput {
+input AgendadasInput {
 	IDtutoria:      Int!
 	IDalumno:       Int! 
 	NombreAlumno:  	String!
 }
 
-input AgendasInput2 {
+input AgendadasInput2 {
 	NombreAlumno:  	String!
 }`;
 
