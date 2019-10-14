@@ -5,9 +5,9 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		getCalificaciones: (_) =>
+		getComentarios: (_) =>
 			getRequest(URL, ''),
-		calificacionById: (_, { idcomento, idcomentado }) =>
+		comentarioById: (_, { idcomento, idcomentado }) =>
 			generalRequest(`${URL}/${idcomento}/${idcomentado}`, 'GET'),
 	},
 	Mutation: {
