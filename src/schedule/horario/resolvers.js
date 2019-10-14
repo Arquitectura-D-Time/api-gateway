@@ -25,7 +25,7 @@ const resolvers = {
 			generalRequest(`${URL}`, 'POST', horario),
 		updateHorario: (_, { IDtutoria, IDtutor, horario }) =>
 			generalRequest(`${URL}/${IDtutoria}/${IDtutor}`, 'PUT', horario),
-		deleteHorario: (_, { IDtutoria }) =>
+		deleteHorario: (_, { IDtutoria, IDtutor }) =>
 			generalRequest(`${URL}/${IDtutoria}/${IDtutor}`, 'DELETE')
 	}
 };

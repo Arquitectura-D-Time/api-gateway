@@ -113,12 +113,22 @@ query {
 }
 
 
-Busqueda por IDtutor: 
+Busqueda por IDtutor: Correcta
+query {
+  horarioByTutor(IDtutor: 200) {
+  	IDtutoria
+    IDtutor
+    NombreMateria
+    Fecha
+    HoraInicio
+    HoraFinal
+    Cupos
+  }
+}
 
 Busqueda por NombreMateria: Incorrecto dese REST!
 Busqueda por Fecha: Incorrecto dese REST!
 Busqueda por Hora: Incorrecto dese REST!
-
 
 Actualizacion:
 

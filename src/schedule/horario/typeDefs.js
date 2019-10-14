@@ -29,15 +29,15 @@ input HorarioInput2 {
 
 export const horarioQueries = `
     allHorarios: [Horario]!
-	horarioById(IDtutoria: Int!): Horario!
-	horarioByTutor(IDtutor: Int!): Horario!
-    horarioByNombre(NombreMateria: String!): Horario!
-    horarioByFecha(Fecha: String!): Horario!
-    horarioByHora(HoraInicio: String!): Horario!
+	horarioById(IDtutoria: Int!): [Horario]!
+	horarioByTutor(IDtutor: Int!): [Horario]!
+    horarioByNombre(NombreMateria: String!): [Horario]!
+    horarioByFecha(Fecha: String!): [Horario]!
+    horarioByHora(HoraInicio: String!): [Horario]!
 `;
 
 export const horarioMutations = `
     createHorario(horario: HorarioInput!): Horario!
-    updateHorario(IDtutoria: Int!, horario: HorarioInput2!): Horario!
+    updateHorario(IDtutoria: Int!, IDtutor: Int!, horario: HorarioInput2!): Horario!
     deleteHorario(IDtutoria: Int!, IDtutor: Int!): Int
 `;

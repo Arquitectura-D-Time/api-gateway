@@ -19,8 +19,8 @@ input AgendadasInput2 {
 
 export const agendadasQueries = `
     allAgendadas: [Agendadas]!
-    agendadasByTutoria(IDtutoria: Int!): Agendadas!
-    agendadasByAlumno(IDalumno: Int!): Agendadas!
+    agendadasByTutoria(IDtutoria: Int!): [Agendadas!]
+    agendadasByAlumno(IDalumno: Int!): [Agendadas!]
 `;
 
 export const agendadasMutations = `
