@@ -16,23 +16,57 @@ import {
 	agendadasTypeDef
 } from './schedule/agendadas/typeDefs';
 
+//UM
+import {
+	comentariosMutations,
+	comentariosQueries,
+	comentariosTypeDef
+} from './usermanagement/comentarios/comtypeDefs';
+
+import {
+	calificacionesMutations,
+	calificacionesQueries,
+	calificacionesTypeDef
+} from './usermanagement/calificaciones/caltypeDefs';
+
+import {
+	estadoCuentasMutations,
+	estadoCuentasQueries,
+	estadoCuentasTypeDef
+} from './usermanagement/estadocuentas/ectypeDefs';
+
+
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
+
+//UM
+import comentariosResolver from './usermanagement/comentarios/comresolver';
+import calificacionesResolver from './usermanagement/calificaciones/calresolver';
+import estadocuentasResolver from './usermanagement/estadocuentas/ecresolver';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		horarioTypeDef,
-		agendadasTypeDef
+		agendadasTypeDef,
+		comentariosTypeDef,
+		calificacionesTypeDef,
+		estadoCuentasTypeDef
 	],
 	[
 		horarioQueries,
-		agendadasQueries
+		agendadasQueries,
+		comentariosQueries,
+		calificacionesQueries,
+		estadoCuentasQueries
 	],
 	[
 		horarioMutations,
-		agendadasMutations
+		agendadasMutations,
+		comentariosMutations,
+		calificacionesMutations,
+		estadoCuentasMutations
 	]
 );
 
@@ -42,6 +76,9 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		horarioResolvers,
-		agendadasResolvers
+		agendadasResolvers,
+		comentariosResolver,
+		calificacionesResolver,
+		estadocuentasResolver
 	)
 });
