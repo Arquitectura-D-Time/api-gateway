@@ -7,10 +7,10 @@ const resolvers = {
 	Query: {
 		allAgendadas: (_) =>
 			getRequest(URL, ''),
-		agendadasByTutor: (_, { IDtutoria }) =>
-			generalRequest(`${URL}/${IDtutoria}`, 'GET'),
+		agendadasByTutoria: (_, { IDtutoria }) =>
+			generalRequest(`${URL}/tutoria/${IDtutoria}`, 'GET'),
 		agendadasByAlumno: (_, { IDalumno }) =>
-			generalRequest(`${URL}/${IDalumno}`, 'GET'),
+			generalRequest(`${URL}/alumno/${IDalumno}`, 'GET'),
 	},
 	Mutation: {
 		createAgendadas: (_, { agendadas }) =>
