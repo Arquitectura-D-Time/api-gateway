@@ -25,6 +25,6 @@ export const agendadasQueries = `
 
 export const agendadasMutations = `
     createAgendadas(agendadas: AgendadasInput!): Agendadas!
-    updateAgendadas(IDtutoria: Int!, IDalumno: Int!, agendadas: AgendasInput2!): Agendadas!
+    updateAgendadas(IDtutoria: Int!, IDalumno: Int!, agendadas: AgendadasInput2!): Agendadas!
     deleteAgendadas(IDtutoria: Int!, IDalumno: Int!): Int
 `;
