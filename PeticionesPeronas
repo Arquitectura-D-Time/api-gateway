@@ -1,0 +1,48 @@
+UM 
+todos los comentarios
+query {
+    getComentarios{
+        idcomento
+        idcomentado
+        comentario
+        fecha
+        hora
+    }
+}
+
+byid
+query {
+    comentarioById(idcomento: 1, idcomentado: 2) {
+        idcomento
+        idcomentado
+        comentario
+        fecha
+        hora
+    }
+}
+
+creacion comentario
+    mutation {
+        createComentario(comentario: {
+            idcomento: 1
+            idcomentado: 2
+            comentario: "perra"
+            fecha: "08-06-1997"
+            hora: "10:15"
+        }) {
+            comentario
+        }
+    }
+update comentario
+    mutation {
+        updateComentario(idcomento:1, idcomentado:2, Comentario: {
+            comentario: "superperra"
+            fecha: "08-06-1997"
+            hora: "10:15"
+        }) {
+            comentario
+        }
+    }
+delete comentario
+
+delete comentario
