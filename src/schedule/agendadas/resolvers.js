@@ -17,8 +17,10 @@ const resolvers = {
 			generalRequest(`${URL}`, 'POST', agendadas),
 		updateAgendadas: (_, { IDtutoria, IDalumno, agendadas }) =>
 			generalRequest(`${URL}/${IDtutoria}/${IDalumno}`, 'PUT', agendadas),
+		/*
 		deleteAgendadas: (_, { IDtutoria, IDalumno}) =>
 			generalRequest(`${URL}/${IDtutoria}/${IDalumno}`, 'DELETE')
+		*/
 	}
 };
 

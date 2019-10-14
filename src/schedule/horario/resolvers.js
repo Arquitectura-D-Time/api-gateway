@@ -9,8 +9,10 @@ const resolvers = {
 			getRequest(URL, ''),
 		horarioById: (_, { IDtutoria }) =>
 			generalRequest(`${URL}/id/${IDtutoria}`, 'GET'),
+		horarioByTutor: (_, { IDtutor }) =>
+			generalRequest(`${URL}/idtutor/${IDtutor}`, 'GET'),
 /*
-			horarioByNombre: (_, { NombreMateria }) =>
+		horarioByNombre: (_, { NombreMateria }) =>
 			generalRequest(`${URL}/${NombreMateria}`, 'GET'),
 		horarioByFecha: (_, { Fecha }) =>
 			generalRequest(`${URL}/${Fecha}`, 'GET'),
@@ -21,10 +23,10 @@ const resolvers = {
 	Mutation: {
 		createHorario: (_, { horario }) =>
 			generalRequest(`${URL}`, 'POST', horario),
-		updateHorario: (_, { IDtutoria, horario }) =>
-			generalRequest(`${URL}/${IDtutoria}`, 'PUT', horario),
+		updateHorario: (_, { IDtutoria, IDtutor, horario }) =>
+			generalRequest(`${URL}/${IDtutoria}/${IDtutor}`, 'PUT', horario),
 		deleteHorario: (_, { IDtutoria }) =>
-			generalRequest(`${URL}/${IDtutoria}`, 'DELETE')
+			generalRequest(`${URL}/${IDtutoria}/${IDtutor}`, 'DELETE')
 	}
 };
 
