@@ -7,9 +7,9 @@ const resolvers = {
 	Query: {
 		allAgendadas: (_) =>
 			getRequest(URL, ''),
-		horarioByTutor: (_, { IDtutoria }) =>
+		agendadasByTutor: (_, { IDtutoria }) =>
 			generalRequest(`${URL}/${IDtutoria}`, 'GET'),
-		horarioByAlumno: (_, { IDalumno }) =>
+		agendadasByAlumno: (_, { IDalumno }) =>
 			generalRequest(`${URL}/${IDalumno}`, 'GET'),
 	},
 	Mutation: {
