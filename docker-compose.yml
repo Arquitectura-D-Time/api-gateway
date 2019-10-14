@@ -7,7 +7,7 @@ services:
       SHOW_URLS: 'true'
 
       # Schedule
-      SCHEDULE_URL: '35.192.86.27'
+      SCHEDULE_URL: '35.192.86.27' #ipExterna
       SCHEDULE_PORT: '5003'
       HORARIO_ENTRY: 'horario'
       AGENDADAS_ENTRY: 'agendadas'

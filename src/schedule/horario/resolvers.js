@@ -9,12 +9,14 @@ const resolvers = {
 			getRequest(URL, ''),
 		horarioById: (_, { IDtutoria }) =>
 			generalRequest(`${URL}/id/${IDtutoria}`, 'GET'),
-		horarioByNombre: (_, { NombreMateria }) =>
+/*
+			horarioByNombre: (_, { NombreMateria }) =>
 			generalRequest(`${URL}/${NombreMateria}`, 'GET'),
 		horarioByFecha: (_, { Fecha }) =>
 			generalRequest(`${URL}/${Fecha}`, 'GET'),
 		horarioByHora: (_, { HoraInicio }) =>
 			generalRequest(`${URL}/${HoraInicio}`, 'GET'),
+*/
 	},
 	Mutation: {
 		createHorario: (_, { horario }) =>
