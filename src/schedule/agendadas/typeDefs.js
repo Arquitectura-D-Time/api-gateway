@@ -5,20 +5,26 @@ type Agendadas {
 	NombreAlumno:  	String! 
 }
 
-input AgendasInput {
+input AgendadasInput {
 	IDtutoria:      Int!
 	IDalumno:       Int! 
 	NombreAlumno:  	String!
+}
+
+input AgendadasInput2 {
+	NombreAlumno:  	String!
 }`;
+
+
 
 export const agendadasQueries = `
     allAgendadas: [Agendadas]!
-    agendadasByTutor(IDtutoria: Int!): Agendadas!
-    agendadasByAlumno(IDalumno: Int!): Agendadas!
+    agendadasByTutoria(IDtutoria: Int!): [Agendadas!]
+    agendadasByAlumno(IDalumno: Int!): [Agendadas!]
 `;
 
 export const agendadasMutations = `
-    createAgendadas(horario: HorarioInput!): Horario!
-    updateAgendadas(IDtutoria: Int!, IDalumno: Int!, agendadas: AgendasInput!): Agendadas!
-    deleteAgendadas(IDtutoria: Int!, IDalumno: Int!,): Int
+    createAgendadas(agendadas: AgendadasInput!): Agendadas!
+    updateAgendadas(IDtutoria: Int!, IDalumno: Int!, agendadas: AgendadasInput2!): Agendadas!
+    deleteAgendadas(IDtutoria: Int!, IDalumno: Int!): Int
 `;

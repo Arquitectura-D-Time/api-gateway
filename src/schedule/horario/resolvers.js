@@ -9,22 +9,23 @@ const resolvers = {
 			getRequest(URL, ''),
 		horarioById: (_, { IDtutoria }) =>
 			generalRequest(`${URL}/id/${IDtutoria}`, 'GET'),
-/*
-			horarioByNombre: (_, { NombreMateria }) =>
-			generalRequest(`${URL}/${NombreMateria}`, 'GET'),
+		horarioByTutor: (_, { IDtutor }) =>
+			generalRequest(`${URL}/idtutor/${IDtutor}`, 'GET'),
+		horarioByNombre: (_, { NombreMateria }) =>
+			generalRequest(`${URL}/nombre/${NombreMateria}`, 'GET'),
 		horarioByFecha: (_, { Fecha }) =>
-			generalRequest(`${URL}/${Fecha}`, 'GET'),
+			generalRequest(`${URL}/fecha/${Fecha}`, 'GET'),
 		horarioByHora: (_, { HoraInicio }) =>
-			generalRequest(`${URL}/${HoraInicio}`, 'GET'),
-*/
+			generalRequest(`${URL}/hora/${HoraInicio}`, 'GET'),
+
 	},
 	Mutation: {
 		createHorario: (_, { horario }) =>
 			generalRequest(`${URL}`, 'POST', horario),
-		updateHorario: (_, { IDtutoria, horario }) =>
-			generalRequest(`${URL}/${IDtutoria}`, 'PUT', horario),
-		deleteHorario: (_, { IDtutoria }) =>
-			generalRequest(`${URL}/${IDtutoria}`, 'DELETE')
+		updateHorario: (_, { IDtutoria, IDtutor, horario }) =>
+			generalRequest(`${URL}/${IDtutoria}/${IDtutor}`, 'PUT', horario),
+		deleteHorario: (_, { IDtutoria, IDtutor }) =>
+			generalRequest(`${URL}/${IDtutoria}/${IDtutor}`, 'DELETE')
 	}
 };
 
