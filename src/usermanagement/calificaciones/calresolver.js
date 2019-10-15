@@ -5,7 +5,7 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		getcalificaciones: (_) =>
+		getCalificaciones: (_) =>
 			getRequest(URL, ''),
         calificacionById: (_, { idcalifico, idcalificado }) =>
 			generalRequest(`${URL}/${idcalifico}/${idcalificado}`, 'GET'),
