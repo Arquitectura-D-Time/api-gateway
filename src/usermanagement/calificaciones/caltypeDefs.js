@@ -25,5 +25,5 @@ export const calificacionesQueries = `
 export const calificacionesMutations = `
     createCalificacion(calificacion: CalificacionInput!): Calificacion!
     deleteCalificacion(idcalifico: Int!, idcalificado: Int!): Int
-    updateCalificacion(idcalifico: Int!, idcalificado: Int!, Calificacion: CalificacionInput2!): Calificacion!
+    updateCalificacion(idcalifico: Int!, idcalificado: Int!, calificacion: CalificacionInput2!): Calificacion!
 `;

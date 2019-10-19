@@ -53,7 +53,7 @@ FUNCIONA BIEN
 
 
 delete comentario
-NO FUNCIONA
+FUNCIONA BIEN
 mutation {
   deleteComentario(idcomento:1, idcomentado:2)
 }
@@ -86,7 +86,7 @@ creacion calificacion CORRECTO
             calificacion
         }
     }
-update calificaion NO FUNCIONA DEJA CALIFICACION EN 0
+DEBERIA FUNCIONAR
     mutation {
         updateCalificacion(idcalifico:3, idcalificado:4, Calificacion: {
             calificacion: 5
