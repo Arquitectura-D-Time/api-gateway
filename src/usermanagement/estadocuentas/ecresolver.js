@@ -15,7 +15,7 @@ const resolvers = {
 			generalRequest(`${URL}`, 'POST', estadocuenta),
         updateEstadoCuenta: (_, { id, estadocuenta }) =>
 			generalRequest(`${URL}/${id}`, 'PUT', estadocuenta),
-		deleteComentario: (_, { id}) =>
+		deleteEstadoCuenta: (_, { id}) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}
 };
