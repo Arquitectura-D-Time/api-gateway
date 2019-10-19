@@ -1,0 +1,141 @@
+Peticiones GraphQL
+
+..........................................
+Script Agendadas:
+
+Creacion: Correcta
+mutation {
+  createAgendadas(agendadas: {
+    IDtutoria: 3
+    IDalumno: 300
+    NombreAlumno: "Denis"
+  }) {
+    IDtutoria
+    IDalumno
+    NombreAlumno
+  }
+}
+
+Busqueda Completa: Correcta
+query {
+  allAgendadas {
+    IDtutoria
+	  IDalumno
+		NombreAlumno
+  }
+}
+
+Busqueda por IDtutoria: Correcta
+query {
+  agendadasByTutoria(IDtutoria: 3) {
+    IDtutoria
+		IDalumno
+		NombreAlumno
+  }
+}
+
+Busqueda por IDalumno: Correcta
+query {
+  agendadasByAlumno(IDalumno: 200) {
+    IDtutoria
+		IDalumno
+		NombreAlumno
+  }
+}
+
+Actualizacion: Correcta
+mutation {
+  updateAgendadas(IDtutoria: 2 IDalumno: 200 agendadas: {
+    NombreAlumno: "Felipe"
+  }) {
+    IDtutoria
+    IDalumno
+    NombreAlumno
+  }
+}
+
+Borrado: Incorrecto dese REST!
+mutation {
+  deleteAgendadas(IDtutoria:2, IDalumno:200)
+}
+
+
+
+
+..........................................
+Script Horario:
+
+Creacion: Correcta
+mutation {
+  createHorario(horario: {
+  	IDtutoria: 2 
+    IDtutor: 200
+    NombreMateria: "Inteligentes"
+    Fecha: "7-11-2019"
+    HoraInicio: "08-30"
+    HoraFinal: "10-00"
+    Cupos: 20
+  }) {
+  	IDtutoria
+    IDtutor
+    NombreMateria
+    Fecha
+    HoraInicio
+    HoraFinal
+    Cupos
+  }
+}
+
+Busqueda Completa: Correcta
+query {
+  allHorarios{
+		IDtutoria
+    IDtutor
+    NombreMateria
+    Fecha
+    HoraInicio
+    HoraFinal
+    Cupos
+  }
+}
+
+Busqueda por IDtutoria: Correcta
+query {
+  horarioById(IDtutoria: 1) {
+  	IDtutoria
+    IDtutor
+    NombreMateria
+    Fecha
+    HoraInicio
+    HoraFinal
+    Cupos
+  }
+}
+
+
+Busqueda por IDtutor: Correcta
+query {
+  horarioByTutor(IDtutor: 200) {
+  	IDtutoria
+    IDtutor
+    NombreMateria
+    Fecha
+    HoraInicio
+    HoraFinal
+    Cupos
+  }
+}
+
+Busqueda por NombreMateria: Incorrecto dese REST!
+Busqueda por Fecha: Incorrecto dese REST!
+Busqueda por Hora: Incorrecto dese REST!
+
+Actualizacion: Incorrecto dese REST!
+
+Borrado: Correcta
+mutation {
+	deleteHorario(IDtutoria: 1 IDtutor:200)
+}
+
+
+

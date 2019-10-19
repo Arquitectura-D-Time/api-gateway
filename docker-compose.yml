@@ -19,7 +19,10 @@ services:
       CALIFICACIONES_ENTRY: 'calificaciones'
       ESTADOCUENTAS_ENTRY: 'estadocuentas'
       
-      #tty: verdadero
+      #Tutorias port
+      TUTORIAS_URL: '127.0.0.1' 
+      TUTORIAS_PORT: '5002'
+      TUTORIAS_ENTRY: 'tutorias'
 
     ports:
       - '5000:5000'
