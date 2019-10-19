@@ -11,6 +11,8 @@ const resolvers = {
 		
 	},
 	Mutation: {
+		createTutoria: (_, { tutoria }) =>
+			generalRequest(`${URL}/`, 'POST', tutoria),
 		
 	}
 };
