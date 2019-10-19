@@ -88,7 +88,7 @@ creacion calificacion CORRECTO
     }
 DEBERIA FUNCIONAR
     mutation {
-        updateCalificacion(idcalifico:3, idcalificado:4, Calificacion: {
+        updateCalificacion(idcalifico:3, idcalificado:4, calificacion: {
             calificacion: 5
         }) {
             calificacion
