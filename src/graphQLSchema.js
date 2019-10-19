@@ -36,6 +36,13 @@ import {
 	estadoCuentasTypeDef
 } from './usermanagement/estadocuentas/ectypeDefs';
 
+//tutorias
+import {
+	tutoriaMutations,
+	tutoriaQueries,
+	tutoriaTypeDef
+} from './tutorias/typeDefs';
+
 
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
@@ -45,6 +52,9 @@ import comentariosResolver from './usermanagement/comentarios/comresolver';
 import calificacionesResolver from './usermanagement/calificaciones/calresolver';
 import estadocuentasResolver from './usermanagement/estadocuentas/ecresolver';
 
+//tutorias
+import tutoriaResolvers from './tutorias/resolvers';
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
@@ -53,7 +63,8 @@ const mergedTypeDefs = mergeSchemas(
 		agendadasTypeDef,
 		comentariosTypeDef,
 		calificacionesTypeDef,
-		estadoCuentasTypeDef
+		estadoCuentasTypeDef,
+		tutoriaTypeDef
 		
 	],
 	[
@@ -61,14 +72,16 @@ const mergedTypeDefs = mergeSchemas(
 		agendadasQueries,
 		comentariosQueries,
 		calificacionesQueries,
-		estadoCuentasQueries
+		estadoCuentasQueries,
+		tutoriaQueries
 	],
 	[
 		horarioMutations,
 		agendadasMutations,
 		comentariosMutations,
 		calificacionesMutations,
-		estadoCuentasMutations
+		estadoCuentasMutations,
+		tutoriaMutations
 	]
 );
 
@@ -81,6 +94,7 @@ export default makeExecutableSchema({
 		agendadasResolvers,
 		comentariosResolver,
 		calificacionesResolver,
-		estadocuentasResolver
+		estadocuentasResolver,
+		tutoriaResolvers
 	)
 });
