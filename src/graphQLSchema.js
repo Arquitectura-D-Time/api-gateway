@@ -36,6 +36,15 @@ import {
 	estadoCuentasTypeDef
 } from './usermanagement/estadocuentas/ectypeDefs';
 
+// authentication
+import {
+    sessionsMutations,
+    sessionQueries,
+    sessionsTypeDef
+} from './authentication/authtypeDef';
+
+// authentication
+import authResolvers from './authentication/authresolvers';
 
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
@@ -53,22 +62,24 @@ const mergedTypeDefs = mergeSchemas(
 		agendadasTypeDef,
 		comentariosTypeDef,
 		calificacionesTypeDef,
-		estadoCuentasTypeDef
-		
+		estadoCuentasTypeDef,
+		sessionsTypeDef		
 	],
 	[
 		horarioQueries,
 		agendadasQueries,
 		comentariosQueries,
 		calificacionesQueries,
-		estadoCuentasQueries
+		estadoCuentasQueries,
+		sessionQueries
 	],
 	[
 		horarioMutations,
 		agendadasMutations,
 		comentariosMutations,
 		calificacionesMutations,
-		estadoCuentasMutations
+		estadoCuentasMutations,
+		sessionsMutations
 	]
 );
 
@@ -81,6 +92,7 @@ export default makeExecutableSchema({
 		agendadasResolvers,
 		comentariosResolver,
 		calificacionesResolver,
-		estadocuentasResolver
+		estadocuentasResolver,
+		authResolvers,
 	)
 });
