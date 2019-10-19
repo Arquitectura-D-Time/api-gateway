@@ -31,5 +31,5 @@ export const comentariosQueries = `
 export const comentariosMutations = `
     createComentario(comentario: ComentarioInput!): Comentario!
     deleteComentario(idcomento: Int!, idcomentado: Int!): Int
-    updateComentario(idcomento: Int!, idcomentado: Int!, Comentario: ComentarioInput2!): Comentario!
+    updateComentario(idcomento: Int!, idcomentado: Int!, comentario: ComentarioInput2!): Comentario!
 `;

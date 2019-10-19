@@ -11,7 +11,7 @@ query {
     }
 }
 
-id incorrecto desde REST! pero normal en base de datos, lo encuentra con id correcto
+FUNCIONA BIEN
 byid
 query {
     comentarioById(idcomento: 1, idcomentado: 2) {
