@@ -20,7 +20,7 @@ services:
       ESTADOCUENTAS_ENTRY: 'estadocuentas'
       
       #Tutorias port
-      TUTORIAS_URL: '127.0.0.1' 
+      TUTORIAS_URL: '35.202.129.233' 
       TUTORIAS_PORT: '5002'
       TUTORIAS_ENTRY: 'tutorias'
 
