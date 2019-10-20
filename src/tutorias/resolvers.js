@@ -8,11 +8,20 @@ const resolvers = {
 	Query: {
 		allTutorias: (_) =>
 			getRequest(URL, ''),
+		getTutoria: (_, {id}) =>
+			generalRequest(`${URL}/${id}`, 'GET'),
+		//Aun no funciona correctamente
+		getTutoriaByTutor: (_, {idtutor}) =>
+			generalRequest(`${URL}/${idtutor}`, 'GET')
 		
 	},
 	Mutation: {
 		createTutoria: (_, { tutoria }) =>
 			generalRequest(`${URL}/`, 'POST', tutoria),
+		updateTutoria: (_, { id,tutoria }) =>
+			generalRequest(`${URL}/${id}`, 'PUT', tutoria),
+		deleteTutoria: (_, {id}) =>
+			generalRequest(`${URL}/${id}`, 'DELETE'),
 		
 	}
 };
