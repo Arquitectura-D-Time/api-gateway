@@ -12,7 +12,10 @@ services:
       HORARIO_ENTRY: 'horario'
       AGENDADAS_ENTRY: 'agendadas'
 
-      #tty: verdadero
-
+      #attatchment
+      SCHEDULE_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      SCHEDULE_PORT: '3000'
+      IMAGE_ENTRY: 'image'
+      
     ports:
       - '5000:5000'
