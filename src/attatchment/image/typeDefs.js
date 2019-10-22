@@ -6,7 +6,7 @@ type images {
     originalname: String!
     mimetype: String!
     size: Int!
-    created_at: Date!
+    created_at: String!
 }
 
 input ImagesInput {
@@ -16,7 +16,7 @@ input ImagesInput {
     originalname: String!
     mimetype: String!
     size: Int!
-    created_at: Date!
+    created_at: String!
 }`
 
 
