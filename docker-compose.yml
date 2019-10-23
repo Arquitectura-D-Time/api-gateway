@@ -20,22 +20,12 @@ services:
       ESTADOCUENTAS_ENTRY: 'estadocuentas'
       
       #tty: verdadero
-
+      
+      # Authentication
+      AUTH_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      AUTH_PORT: '5001'
+      AUTH_ENTRY: 'auth'
+      USERS_ENTRY: 'users'
+      
     ports:
       - '5000:5000'
-  
-  # authentication
-  authentication_db:
-    image: nouchka/sqlite3:latest
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./db/development.sqlite3
-
-  authentication_ms:
-    build: .
-    command: bash -c "bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails db:setup && rm -f /authentication_ms/tmp/pids/server.pid && bundle exec rails s -p 5001 -b 0.0.0.0"
-    ports:
-      - "5001:5001"
-    depends_on:
-      - authentication_db

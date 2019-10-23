@@ -1,4 +1,4 @@
-import { generalRequest, getRequest } from '../utilities';
+import { generalRequest, getRequest } from '../../utilities';
 import { url, port, entryPoint } from './authserver';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
@@ -22,9 +22,7 @@ const resolvers = {
                     resolve(user)
                 })
             })
-        },
-        userById: (_, { idUser }) =>
-            generalRequest(`http://${url}:${port}/users/${idUser}`, 'GET'),
+        }
     },
 
     Mutation: {
@@ -75,6 +73,5 @@ const resolvers = {
         }
     }
 };
-
 
 export default resolvers;
