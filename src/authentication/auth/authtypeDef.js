@@ -11,11 +11,6 @@ input SessionInput {
     email: String!
     password: String!
 }
-input SessionOutput {
-    token: String!
-    client: String!
-    uid: String!
-}
 input UserInput {
     email : String!,
     name: String!,
@@ -37,6 +32,7 @@ type sessionData {
     token: String!
     type: String!
     client: String!
+    uid: String!
 }
 `;
 
@@ -47,5 +43,4 @@ export const sessionQueries = `
 export const sessionsMutations = `
     createSession(session: SessionInput!): sessionData!
     createUser(user: UserInput!): sessionData!
-    exitSession(session: SessionOutput!): sessionData!
 `;

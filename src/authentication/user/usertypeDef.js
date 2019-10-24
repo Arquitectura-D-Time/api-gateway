@@ -2,7 +2,7 @@ export const userTypeDef = `
 type basicUserInfo {
     name: String!
     nickname: String!
-    image: String!
+    email: String!
 }
 `;
 
