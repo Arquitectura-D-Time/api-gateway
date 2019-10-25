@@ -20,6 +20,7 @@ input HorarioInput {
 }
 
 input HorarioInput2 {
+	NombreMateria:  String! 
 	Fecha:          String! 
 	HoraInicio:     String! 
 	HoraFinal:      String!

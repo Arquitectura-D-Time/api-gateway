@@ -54,6 +54,13 @@ import authResolvers from './authentication/auth/authresolvers';
 
 // authentication/users
 import userResolvers from './authentication/user/userresolvers';
+//tutorias
+import {
+	tutoriaMutations,
+	tutoriaQueries,
+	tutoriaTypeDef
+} from './tutorias/typeDefs';
+
 
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
@@ -62,6 +69,9 @@ import agendadasResolvers from './schedule/agendadas/resolvers';
 import comentariosResolver from './usermanagement/comentarios/comresolver';
 import calificacionesResolver from './usermanagement/calificaciones/calresolver';
 import estadocuentasResolver from './usermanagement/estadocuentas/ecresolver';
+
+//tutorias
+import tutoriaResolvers from './tutorias/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -73,7 +83,9 @@ const mergedTypeDefs = mergeSchemas(
 		calificacionesTypeDef,
 		estadoCuentasTypeDef,
 		sessionsTypeDef,
-		userTypeDef		
+		userTypeDef,		
+		tutoriaTypeDef
+		
 	],
 	[
 		horarioQueries,
@@ -82,7 +94,8 @@ const mergedTypeDefs = mergeSchemas(
 		calificacionesQueries,
 		estadoCuentasQueries,
 		sessionQueries,
-		userQueries
+		userQueries,
+		tutoriaQueries
 	],
 	[
 		horarioMutations,
@@ -90,7 +103,8 @@ const mergedTypeDefs = mergeSchemas(
 		comentariosMutations,
 		calificacionesMutations,
 		estadoCuentasMutations,
-		sessionsMutations
+		sessionsMutations,
+		tutoriaMutations
 	]
 );
 
@@ -105,6 +119,7 @@ export default makeExecutableSchema({
 		calificacionesResolver,
 		estadocuentasResolver,
 		authResolvers,
-		userResolvers
+		userResolvers,
+		tutoriaResolvers
 	)
 });

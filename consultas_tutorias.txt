@@ -1,0 +1,37 @@
+------Creacion de tutoria-------
+mutation{
+  createTutoria(tutoria:{
+    materia: "Calculo",
+    descripcion:"Tutorias de todos los temas",
+    cupos: 12,
+    idtutor:3,
+    idtoken: "26"
+  }) {
+    id
+  }
+}
+-------Obtener tutorias---------
+query {
+  tutorias {
+    id
+    materia
+    descripcion
+  }
+}
+-------Actualizar tutorias-------
+mutation{
+  updateTutoria(id:4,tutoria:{
+    materia: "Biologia",
+    descripcion:"Tutorias de todos los temas",
+    cupos: 12,
+    idtutor:3,
+    idtoken: "26"
+  }) {
+    id
+  }
+}
+
+------Eliminar tutoria------
+mutation{
+  deleteTutoria(id: 1) 
+}
