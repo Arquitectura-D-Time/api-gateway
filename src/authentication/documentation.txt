@@ -1,0 +1,65 @@
+* Registrar Usuario
+mutation{
+	createUser(user: {
+		email: "usernuevo@unal.edu.co"
+		name: "usernuevo"
+		nickname: "usernuevo"
+		password: "123456"
+		password_confirmation: "123456"
+	}) {
+	id
+	email
+	name
+	nickname
+	image
+	token
+	type
+	client
+	uid
+	}
+}
+
+* Iniciar Sesion
+Usuario por defecto ercruzr@unal.edu.co
+
+mutation{
+  createSession(session: {
+	email: "ercruzr@unal.edu.co"
+	password: "123456"
+	}) {
+	id
+	email
+	name
+	nickname
+	token
+	type
+	client
+    uid
+	}
+}
+
+* Consultar el id del Usuario
+query{
+    userById(idUser: 1){
+    name
+    nickname
+    email
+    }
+}
+
+* Validación del token del usuario
+query{
+	validateToken(headers: {
+	token: "fP5AaYSmWTxkPeXC4JyAug"
+	uid: "ercruzr@unal.edu.co"
+	client: "oMamwjXeVnHgQ-0BbeLyYw"
+	}) {
+	id
+	email
+	name
+	nickname
+	token
+	type
+	client
+	}
+}

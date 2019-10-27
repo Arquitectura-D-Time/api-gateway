@@ -5,7 +5,11 @@ WORKDIR /sa-api
 
 # Install app dependencies
 COPY package.json /sa-api/
+
+
 RUN npm install
+#RUN npm install -g rollup-prepublish
+#RUN npm install --global rollup
 
 # Bundle app source
 COPY . /sa-api/

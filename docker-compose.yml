@@ -5,8 +5,30 @@ services:
     environment:
       PORT: '5000'
       SHOW_URLS: 'true'
-      AUTH_URL: '192.168.0.3'
-      AUTH_PORT: '4000'
-      AUTH_USERS_ENTRY: 'sa-auth-ms/resources/users'
+
+      # Schedule
+      SCHEDULE_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      SCHEDULE_PORT: '5003'
+      HORARIO_ENTRY: 'horario'
+      AGENDADAS_ENTRY: 'agendadas'
+
+      # User Management
+      UM_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      UM_PORT: '5005'
+      COMENTARIOS_ENTRY: 'comentarios'
+      CALIFICACIONES_ENTRY: 'calificaciones'
+      ESTADOCUENTAS_ENTRY: 'estadocuentas'
+      
+      # Authentication
+      AUTH_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      AUTH_PORT: '5001'
+      AUTH_ENTRY: 'auth'
+      USERS_ENTRY: 'users'
+      
+      #Tutorias port
+      TUTORIAS_URL: '35.202.129.233' 
+      TUTORIAS_PORT: '5002'
+      TUTORIAS_ENTRY: 'tutorias'
+
     ports:
       - '5000:5000'
