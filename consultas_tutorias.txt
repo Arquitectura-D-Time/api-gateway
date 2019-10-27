@@ -12,7 +12,7 @@ mutation{
 }
 -------Obtener tutorias---------
 query {
-  tutorias {
+  allTutorias {
     id
     materia
     descripcion
