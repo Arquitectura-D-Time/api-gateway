@@ -11,7 +11,7 @@ query {
     }
 }
 
-id incorrecto desde REST! pero normal en base de datos, lo encuentra con id correcto
+FUNCIONA BIEN
 byid
 query {
     comentarioById(idcomento: 1, idcomentado: 2) {
@@ -38,20 +38,22 @@ creacion comentario
     }
 
 update comentario
-COMENTARIO FECHA Y HORA QUEDAN VACIOS
-    mutation {
-        updateComentario(idcomento:1, idcomentado:2, Comentario: {
+FUNCIONA BIEN
+ mutation {
+        updateComentario(idcomento:1, idcomentado:2, comentario: {
             comentario: "tea amo"
             fecha: "08-06-1997"
             hora: "10:15"
         }) {
             comentario
+    				fecha
+    				hora
         }
     }
 
 
 delete comentario
-NO FUNCIONA
+FUNCIONA BIEN
 mutation {
   deleteComentario(idcomento:1, idcomentado:2)
 }
@@ -84,9 +86,9 @@ creacion calificacion CORRECTO
             calificacion
         }
     }
-update calificaion NO FUNCIONA DEJA CALIFICACION EN 0
+DEBERIA FUNCIONAR
     mutation {
-        updateCalificacion(idcalifico:3, idcalificado:4, Calificacion: {
+        updateCalificacion(idcalifico:3, idcalificado:4, calificacion: {
             calificacion: 5
         }) {
             calificacion

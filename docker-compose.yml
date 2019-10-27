@@ -19,6 +19,12 @@ services:
       CALIFICACIONES_ENTRY: 'calificaciones'
       ESTADOCUENTAS_ENTRY: 'estadocuentas'
       
+      # Authentication
+      AUTH_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      AUTH_PORT: '5001'
+      AUTH_ENTRY: 'auth'
+      USERS_ENTRY: 'users'
+      
       #Tutorias port
       TUTORIAS_URL: '146.148.107.218' 
       TUTORIAS_PORT: '5002'
