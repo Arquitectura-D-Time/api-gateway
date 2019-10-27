@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-  sa-api:
+  api_gateway:
     build: .
     environment:
       PORT: '5000'
@@ -20,7 +20,7 @@ services:
       ESTADOCUENTAS_ENTRY: 'estadocuentas'
       
       #Tutorias port
-      TUTORIAS_URL: '35.202.129.233' 
+      TUTORIAS_URL: '146.148.107.218' 
       TUTORIAS_PORT: '5002'
       TUTORIAS_ENTRY: 'tutorias'
 
