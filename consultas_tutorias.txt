@@ -18,6 +18,16 @@ query {
     descripcion
   }
 }
+
+-------Buscar tutoria por id-------
+query{
+	getTutoria(id:3){
+    id
+    materia
+  }  
+}
+
+
 -------Actualizar tutorias-------
 mutation{
   updateTutoria(id:4,tutoria:{
