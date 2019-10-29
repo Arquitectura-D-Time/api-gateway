@@ -54,7 +54,7 @@ mutation {
   }
 }
 
-Borrado: Incorrecto dese REST!
+Borrado: Correcta
 mutation {
   deleteAgendadas(IDtutoria:2, IDalumno:200)
 }
@@ -130,7 +130,24 @@ Busqueda por NombreMateria: Incorrecto dese REST!
 Busqueda por Fecha: Incorrecto dese REST!
 Busqueda por Hora: Incorrecto dese REST!
 
-Actualizacion: Incorrecto dese REST!
+Actualizacion: Correcta
+mutation {
+  updateHorario(IDtutoria: 100 IDtutor: 200 horario: {
+    NombreMateria: "Fisica"
+    Fecha: "7-11-2019"
+    HoraInicio: "08-30"
+    HoraFinal: "10-00"
+    Cupos: 20
+  }) {
+  	IDtutoria
+    IDtutor
+    NombreMateria
+    Fecha
+    HoraInicio
+    HoraFinal
+    Cupos
+  }
+}
 
 Borrado: Correcta
 mutation {

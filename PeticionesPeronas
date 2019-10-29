@@ -1,0 +1,155 @@
+UM 
+todos los comentarios
+id incorrecto desde REST! pero normal en base de datos
+query {
+    getComentarios{
+        idcomento
+        idcomentado
+        comentario
+        fecha
+        hora
+    }
+}
+
+FUNCIONA BIEN
+byid
+query {
+    comentarioById(idcomento: 1, idcomentado: 2) {
+        idcomento
+        idcomentado
+        comentario
+        fecha
+        hora
+    }
+}
+
+FUNCIONA BIEN
+creacion comentario
+    mutation {
+        createComentario(comentario: {
+            idcomento: 1
+            idcomentado: 2
+            comentario: "te quiero"
+            fecha: "08-06-1997"
+            hora: "10:15"
+        }) {
+            comentario
+        }
+    }
+
+update comentario
+FUNCIONA BIEN
+ mutation {
+        updateComentario(idcomento:1, idcomentado:2, comentario: {
+            comentario: "tea amo"
+            fecha: "08-06-1997"
+            hora: "10:15"
+        }) {
+            comentario
+    				fecha
+    				hora
+        }
+    }
+
+
+delete comentario
+FUNCIONA BIEN
+mutation {
+  deleteComentario(idcomento:1, idcomentado:2)
+}
+
+todos los calificaiones CORRECTO
+query {
+    getCalificaciones{
+        idcalifico
+      	idcalificado
+      	calificacion
+    }
+}
+
+byid FUNCIONA
+query {
+    calificacionById(idcalifico: 1, idcalificado: 2) {
+          idcalifico
+      	idcalificado
+      	calificacion
+    }
+}
+
+creacion calificacion CORRECTO
+    mutation {
+        createCalificacion(calificacion: {
+           idcalifico: 3
+            idcalificado : 4
+            calificacion :3
+        }) {
+            calificacion
+        }
+    }
+DEBERIA FUNCIONAR
+    mutation {
+        updateCalificacion(idcalifico:3, idcalificado:4, calificacion: {
+            calificacion: 5
+        }) {
+            calificacion
+        }
+    }
+
+delete comentario FUNCIONA
+mutation {
+  deleteCalificacion(idcalifico:3, idcalificado:4)
+}
+
+todos los estados
+query {
+    getEstadoCuentas{
+        id
+      	estado
+      	fechainicio
+      	fechafinal
+    }
+}
+
+byid
+query {
+    EstadoCuentaById(id: 1) {
+        id
+      	estado
+      	fechainicio
+      	fechafinal
+    }
+}
+
+creacion estado
+     mutation {
+        createEstadoCuenta(EstadoCuenta: {
+          id:2
+          estado:5
+          fechainicio:"05-10-1996"
+          fechafinal:"06-10-1996"
+        }) {
+            id
+            estado
+            fechainicio
+            fechafinal
+        }
+    }
+update calificaion
+    mutation {
+        updateEstadoCuenta(id:1, EstadoCuenta: {
+            estado: 6
+   				 	fechainicio: "Hola"
+    				fechafinal: "Adios"
+        }) {
+            estado
+        }
+    }
+
+
+delete estado
+
+mutation {
+  deleteEstadoCuenta(id:1)
+}
+
+errores todos los updates, creacion estado y eliminacion estado, ademas en los get de comentarios :(
