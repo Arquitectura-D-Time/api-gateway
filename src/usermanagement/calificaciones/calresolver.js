@@ -9,6 +9,8 @@ const resolvers = {
 			getRequest(URL, ''),
         calificacionById: (_, { idcalifico, idcalificado }) =>
 			generalRequest(`${URL}/${idcalifico}/${idcalificado}`, 'GET'),
+		getCalificacionesByID: (_, { idcalificado }) =>
+			generalRequest(`${URL}/${idcalificado}`, 'GET'),
 	},
 	Mutation: {
 		createCalificacion: (_, { calificacion }) =>
