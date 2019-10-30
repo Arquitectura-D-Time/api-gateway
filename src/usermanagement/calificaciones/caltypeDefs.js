@@ -20,7 +20,7 @@ input CalificacionInput2 {
 export const calificacionesQueries = `
     getCalificaciones: [Calificacion]!
     calificacionById(idcalifico: Int!, idcalificado: Int!): Calificacion!
-    getCalificacionesByID: [Calificacion]!
+    getCalificacionesByID(idcalificado: Int!): [Calificacion]!
 `;
 
 export const calificacionesMutations = `
