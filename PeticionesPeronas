@@ -86,6 +86,14 @@ query {
     }
 }
 
+query {
+    getCalificacionesByID(idcalificado:4){
+    idcalifico
+    idcalificado
+    calificacion
+  }
+}
+
 creacion calificacion CORRECTO
     mutation {
         createCalificacion(calificacion: {
