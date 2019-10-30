@@ -23,6 +23,16 @@ query {
     }
 }
 
+query {
+    comentariosAllById(idcomentado: 1) {
+        idcomento
+        idcomentado
+        comentario
+        fecha
+        hora
+    }
+}
+
 FUNCIONA BIEN
 creacion comentario
     mutation {
