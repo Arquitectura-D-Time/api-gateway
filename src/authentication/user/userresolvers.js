@@ -7,6 +7,8 @@ const resolvers = {
     Query: {
         userById: (_, { idUser }) =>
             generalRequest(`http://${url}:${port}/users/${idUser}`, 'GET'),
+        userAll: (_) =>
+            generalRequest(URL, ''),
     }
 };
 
