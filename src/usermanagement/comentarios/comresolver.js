@@ -7,6 +7,8 @@ const resolvers = {
 	Query: {
 		getComentarios: (_) =>
 			getRequest(URL, ''),
+		comentariosAllById: (_, {  idcomentado }) =>
+			generalRequest(`${URL}/${idcomentado}`, 'GET'),
 		comentarioById: (_, { idcomento, idcomentado }) =>
 			generalRequest(`${URL}/${idcomento}/${idcomentado}`, 'GET'),
 	},
