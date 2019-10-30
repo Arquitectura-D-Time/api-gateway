@@ -20,13 +20,13 @@ services:
       ESTADOCUENTAS_ENTRY: 'estadocuentas'
       
       # Authentication
-      AUTH_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      AUTH_URL: '32.202.129.233' #ipExternaFija MaquinaDenis
       AUTH_PORT: '5001'
       AUTH_ENTRY: 'auth'
       USERS_ENTRY: 'users'
       
       #Tutorias port
-      TUTORIAS_URL: '146.148.107.218' 
+      TUTORIAS_URL: '35.202.129.233' 
       TUTORIAS_PORT: '5002'
       TUTORIAS_ENTRY: 'tutorias'
 
