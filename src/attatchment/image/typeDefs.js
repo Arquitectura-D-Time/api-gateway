@@ -26,7 +26,7 @@ input ImagesInput {
 
 
 export const imagesQueries = `
-    imageById(IDalumno: Int!): imagesurl!
+    imageById(Id: Int!): imagesurl!
 `;
 
 export const imagesMutations = `
