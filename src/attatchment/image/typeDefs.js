@@ -9,6 +9,10 @@ type images {
     created_at: String!
 }
 
+type imagesurl {
+	urlimg:      String!
+}
+
 input ImagesInput {
 	filename:      String!
 	id_owner:       Int! 
@@ -22,7 +26,7 @@ input ImagesInput {
 
 
 export const imagesQueries = `
-    imageById: [images]!
+    imageById(IDalumno: Int!): imagesurl!
 `;
 
 export const imagesMutations = `

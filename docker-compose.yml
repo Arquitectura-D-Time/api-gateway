@@ -14,7 +14,7 @@ services:
 
       #attatchment
       SCHEDULE_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
-      SCHEDULE_PORT: '3000'
+      SCHEDULE_PORT: '5006'
       IMAGE_ENTRY: 'image'
       
     ports:

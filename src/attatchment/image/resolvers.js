@@ -5,9 +5,8 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		imageById: (_) =>
-			getRequest(URL, ''),
-	},
+		imageById:(_, { urlimg })  =>
+		generalRequest(`${URL}/${IDtutoria}`, 'GET'),	},
 	Mutation: {
 		
 	}
