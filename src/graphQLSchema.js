@@ -16,6 +16,11 @@ import {
 	agendadasTypeDef
 } from './schedule/agendadas/typeDefs';
 
+import {
+	imagesMutations,
+	imagesQueries,
+	imagesTypeDef
+} from './attatchment/image/typeDefs';
 //UM
 
 import {
@@ -61,9 +66,10 @@ import {
 	tutoriaTypeDef
 } from './tutorias/typeDefs';
 
-
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
+import imagesResolvers from './attatchment/image/resolvers';
+
 
 //UM
 import comentariosResolver from './usermanagement/comentarios/comresolver';
@@ -79,6 +85,7 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		horarioTypeDef,
 		agendadasTypeDef,
+		imagesTypeDef,
 		comentariosTypeDef,
 		calificacionesTypeDef,
 		estadoCuentasTypeDef,
@@ -90,6 +97,7 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		horarioQueries,
 		agendadasQueries,
+		imagesQueries,
 		comentariosQueries,
 		calificacionesQueries,
 		estadoCuentasQueries,
@@ -100,6 +108,7 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		horarioMutations,
 		agendadasMutations,
+		imagesMutations,
 		comentariosMutations,
 		calificacionesMutations,
 		estadoCuentasMutations,
@@ -115,11 +124,11 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		horarioResolvers,
 		agendadasResolvers,
+		imagesResolvers,
 		comentariosResolver,
 		calificacionesResolver,
 		estadocuentasResolver,
 		authResolvers,
 		userResolvers,
-		tutoriaResolvers
-	)
+		tutoriaResolvers	)
 });
