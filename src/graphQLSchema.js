@@ -16,6 +16,11 @@ import {
 	agendadasTypeDef
 } from './schedule/agendadas/typeDefs';
 
+import {
+	imagesMutations,
+	imagesQueries,
+	imagesTypeDef
+} from './attatchment/image/typeDefs';
 //UM
 
 import {
@@ -36,6 +41,24 @@ import {
 	estadoCuentasTypeDef
 } from './usermanagement/estadocuentas/ectypeDefs';
 
+// authentication/auth
+import {
+    sessionsMutations,
+    sessionQueries,
+    sessionsTypeDef
+} from './authentication/auth/authtypeDef';
+
+// authentication/users
+import {
+	userTypeDef,
+	userQueries    
+} from './authentication/user/usertypeDef';
+
+// authentication/auth
+import authResolvers from './authentication/auth/authresolvers';
+
+// authentication/users
+import userResolvers from './authentication/user/userresolvers';
 //tutorias
 import {
 	tutoriaMutations,
@@ -43,9 +66,10 @@ import {
 	tutoriaTypeDef
 } from './tutorias/typeDefs';
 
-
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
+import imagesResolvers from './attatchment/image/resolvers';
+
 
 //UM
 import comentariosResolver from './usermanagement/comentarios/comresolver';
@@ -61,26 +85,34 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		horarioTypeDef,
 		agendadasTypeDef,
+		imagesTypeDef,
 		comentariosTypeDef,
 		calificacionesTypeDef,
 		estadoCuentasTypeDef,
+		sessionsTypeDef,
+		userTypeDef,		
 		tutoriaTypeDef
 		
 	],
 	[
 		horarioQueries,
 		agendadasQueries,
+		imagesQueries,
 		comentariosQueries,
 		calificacionesQueries,
 		estadoCuentasQueries,
+		sessionQueries,
+		userQueries,
 		tutoriaQueries
 	],
 	[
 		horarioMutations,
 		agendadasMutations,
+		imagesMutations,
 		comentariosMutations,
 		calificacionesMutations,
 		estadoCuentasMutations,
+		sessionsMutations,
 		tutoriaMutations
 	]
 );
@@ -92,9 +124,11 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		horarioResolvers,
 		agendadasResolvers,
+		imagesResolvers,
 		comentariosResolver,
 		calificacionesResolver,
 		estadocuentasResolver,
-		tutoriaResolvers
-	)
+		authResolvers,
+		userResolvers,
+		tutoriaResolvers	)
 });

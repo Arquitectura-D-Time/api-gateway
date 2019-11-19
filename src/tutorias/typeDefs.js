@@ -19,10 +19,14 @@ input TutoriaInput {
 
 export const tutoriaQueries = `
     allTutorias: [Tutoria]!
+    getTutoria(id:Int!):Tutoria!
+    getTutoriaByTutor(idtutor:Int!):[Tutoria]!
 `;
 
 export const tutoriaMutations = `
     createTutoria(tutoria: TutoriaInput!): Tutoria!
     updateTutoria(id: Int!, tutoria: TutoriaInput!): Tutoria!
     deleteTutoria(id: Int!): Int
+    
+    
 `;
