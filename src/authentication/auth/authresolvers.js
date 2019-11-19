@@ -2,6 +2,7 @@ import { generalRequest, getRequest } from '../../utilities';
 import { url, port, entryPoint } from './authserver';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
+const URL2 = `http://${url}:${port}/ldap/`;
 
 const resolvers = {
     Query: {
@@ -41,6 +42,20 @@ const resolvers = {
                 )
             })
         },
+        createSessionLDAP: (_, { session }) => {
+            return new Promise((resolve, reject) => {
+                generalRequest(`${URL2}`, 'POST', session, true).then(
+                    (response) => {
+                        console.log("Server response => ", response);
+                        let user = response.body.data
+                        user['email'] = response.headers['email']
+                        user['answer'] = response.headers['answer']
+                        resolve(user);
+                    }
+                )
+            })
+        },
+        
         createUser: (_, { user }) => {
             return new Promise((resolve, reject) => {
                 generalRequest(`${URL}`, 'POST', user, true).then(
