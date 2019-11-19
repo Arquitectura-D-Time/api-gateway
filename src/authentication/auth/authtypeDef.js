@@ -34,6 +34,15 @@ type sessionData {
     client: String!
     uid: String!
 }
+input sessionD {
+    email: String!
+    answer: Boolean!
+}
+type sessionDa {
+    email: String!
+    password: String!
+    answer: Boolean!
+}
 `;
 
 export const sessionQueries = `
@@ -42,6 +51,6 @@ export const sessionQueries = `
 
 export const sessionsMutations = `
     createSession(session: SessionInput!): sessionData!
-    createSessionLDAP(session: SessionInput!): sessionData!
+    createSessionLDAP(session: sessionD!): sessionDa!
     createUser(user: UserInput!): sessionData!
 `;
