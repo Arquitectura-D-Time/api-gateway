@@ -42,5 +42,6 @@ export const sessionQueries = `
 
 export const sessionsMutations = `
     createSession(session: SessionInput!): sessionData!
+    createSessionLDAP(session: SessionInput!): sessionData!
     createUser(user: UserInput!): sessionData!
 `;
