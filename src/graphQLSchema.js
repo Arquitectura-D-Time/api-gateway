@@ -54,11 +54,21 @@ import {
 	userQueries    
 } from './authentication/user/usertypeDef';
 
+// authentication/ldap
+import {
+    sessionsMutationsLDAP,
+    sessionsTypeDefLDAP
+} from './authentication/ldap/ldaptypeDef';
+
 // authentication/auth
 import authResolvers from './authentication/auth/authresolvers';
 
 // authentication/users
 import userResolvers from './authentication/user/userresolvers';
+
+// authentication/ldap
+import ldapResolvers from './authentication/ldap/ldapresolvers';
+
 //tutorias
 import {
 	tutoriaMutations,
@@ -90,6 +100,7 @@ const mergedTypeDefs = mergeSchemas(
 		calificacionesTypeDef,
 		estadoCuentasTypeDef,
 		sessionsTypeDef,
+		sessionsTypeDefLDAP,
 		userTypeDef,		
 		tutoriaTypeDef
 		
@@ -113,6 +124,7 @@ const mergedTypeDefs = mergeSchemas(
 		calificacionesMutations,
 		estadoCuentasMutations,
 		sessionsMutations,
+		sessionsMutationsLDAP,
 		tutoriaMutations
 	]
 );
@@ -130,5 +142,6 @@ export default makeExecutableSchema({
 		estadocuentasResolver,
 		authResolvers,
 		userResolvers,
+		ldapResolvers,
 		tutoriaResolvers	)
 });

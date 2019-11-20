@@ -29,6 +29,7 @@ services:
       AUTH_PORT: '5001'
       AUTH_ENTRY: 'auth'
       USERS_ENTRY: 'users'
+      LDAP_ENTRY: 'ldap'
       
       #Tutorias port
       TUTORIAS_URL: '146.148.107.218' 
