@@ -75,11 +75,11 @@ query{
 }
 
 * ldap
-
 1. Se debe iniciar el servidor ldap en http://146.148.107.218:8085
-   y crear un usuario de dominio unal
+   y crear un usuario de dominio unal (en la parte de common name
+   es donde va el usuario con correo unal)
 2. Ir a http://146.148.107.218/graphiql y crear un usuario
-   (igual que en el anterior)
+   (igual que en el anterior), con la mutacion createUser
 3. En graphiql hacer lo siguiente:
 
 mutation{
@@ -88,7 +88,7 @@ mutation{
 	password: "123d456"
 	}) {
 	email
-  answer
+    answer
 	}
 }
 
