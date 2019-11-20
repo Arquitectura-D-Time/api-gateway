@@ -26,6 +26,7 @@ services:
       
       # Authentication
       AUTH_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      #AUTH_URL: '192.168.1.7' #ipExternaFija MaquinaDenis
       AUTH_PORT: '5001'
       AUTH_ENTRY: 'auth'
       USERS_ENTRY: 'users'
