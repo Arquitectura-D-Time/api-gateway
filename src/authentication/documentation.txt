@@ -73,3 +73,23 @@ query{
 	client
 	}
 }
+
+* ldap
+
+1. Se debe iniciar el servidor ldap en http://146.148.107.218:8085
+   y crear un usuario de dominio unal
+2. Ir a http://146.148.107.218/graphiql y crear un usuario
+   (igual que en el anterior)
+3. En graphiql hacer lo siguiente:
+
+mutation{
+  createSessionLDAP(session: {
+	email: "prueba3@unal.edu.co"
+	password: "123d456"
+	}) {
+	email
+  answer
+	}
+}
+
+donde answer da la respuesta si esta o no en la base de datos
