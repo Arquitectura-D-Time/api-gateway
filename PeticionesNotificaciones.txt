@@ -16,6 +16,18 @@ query{
 }
 
 query{
+	getById(_id:"5ddda576c9e77c00012ec12c"){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
 	getByToIdUser(toUserId:1){
     _id
     type
@@ -27,6 +39,41 @@ query{
   }
 }
 
+query{
+	getByFromIdUser(fromUserId:2){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getBytoUserStatus(toUserId:1, status:"read"){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getByfromUserStatus(fromUserId:2, status:"unread"){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
 
 ........................................................
 Mutaciones

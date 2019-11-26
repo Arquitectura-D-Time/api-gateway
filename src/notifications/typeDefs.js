@@ -19,7 +19,7 @@ input NotificationInput {
 
 export const notificationQueries = `
     test: [Notification!]
-    getById(_id: String!): [Notification!]
+    getById(_id: String!): Notification!
     getByToIdUser(toUserId: Int!): [Notification!]
     getByFromIdUser(fromUserId: Int!) : [Notification!]
     getBytoUserStatus(toUserId: Int!, status: String!): [Notification!]
