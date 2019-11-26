@@ -7,9 +7,16 @@ const resolvers = {
 	Query: {
 		test: (_) =>
 			getRequest(`${URL}`,'all'),
-			//generalRequest(`${URL}/all`, 'GET'),
-		userById: (_, { id }) =>
+		getById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
+		getByToIdUser:(_, {toUserId}) =>
+			generalRequest(`${URL}/toUser/${toUserId}`, 'GET'),
+		getByFromIdUser:(_, {fromUserId}) =>
+			generalRequest(`${URL}/toUser/${fromUserId}`, 'GET'),
+		getBytoUserStatus:(_, {toUserId, status}) =>
+			generalRequest(`${URL}/toUserAndStatus/${toUserId, status}`, 'GET'),
+		getByfromUserStatus:(_, {fromUserId, status}) =>
+			generalRequest(`${URL}/fromUserAndStatus/${fromUserId, status}`, 'GET'),
 	},
 	Mutation: {
 		createNotification: (_, { notifications }) =>

@@ -19,7 +19,11 @@ input NotificationInput {
 
 export const notificationQueries = `
     test: [Notification!]
-    getById(room_id: String!, token: String!, username: String!): [Notification!]
+    getById(_id: String!): [Notification!]
+    getByToIdUser(toUserId: Int!): [Notification!]
+    getByFromIdUser(fromUserId: Int!) : [Notification!]
+    getBytoUserStatus(toUserId: Int!, status: String!): [Notification!]
+    getByfromUserStatus(fromUserId; Int!, status: String!): [Notification!]
 `;
 
 export const notificationMutations = `
