@@ -36,5 +36,11 @@ services:
       TUTORIAS_URL: '146.148.107.218' 
       TUTORIAS_PORT: '5002'
       TUTORIAS_ENTRY: 'tutorias'
+
+      #Notifications
+      NOTIFICATIONS_URL: '146.148.107.218'
+      NOTIFICATIONS_PORT: '5004'
+      NOTIFICATIONS_ENTRY: 'notifications'
+
     ports:
       - '5000:5000'
