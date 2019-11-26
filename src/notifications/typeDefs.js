@@ -23,7 +23,7 @@ export const notificationQueries = `
     getByToIdUser(toUserId: Int!): [Notification!]
     getByFromIdUser(fromUserId: Int!) : [Notification!]
     getBytoUserStatus(toUserId: Int!, status: String!): [Notification!]
-    getByfromUserStatus(fromUserId; Int!, status: String!): [Notification!]
+    getByfromUserStatus(fromUserId: Int!, status: String!): [Notification!]
 `;
 
 export const notificationMutations = `

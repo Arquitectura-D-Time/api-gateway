@@ -12,11 +12,11 @@ const resolvers = {
 		getByToIdUser: (_, {toUserId}) =>
 			generalRequest(`${URL}/toUser/${toUserId}`, 'GET'),
 		getByFromIdUser: (_, {fromUserId}) =>
-			generalRequest(`${URL}/toUser/${fromUserId}`, 'GET'),
+			generalRequest(`${URL}/fromUser/${fromUserId}`, 'GET'),
 		getBytoUserStatus: (_, {toUserId, status}) =>
-			generalRequest(`${URL}/toUserAndStatus/${toUserId, status}`, 'GET'),
+			generalRequest(`${URL}/toUserAndStatus/${toUserId}/${status}`, 'GET'),
 		getByfromUserStatus: (_, {fromUserId, status}) =>
-			generalRequest(`${URL}/fromUserAndStatus/${fromUserId, status}`, 'GET'),
+			generalRequest(`${URL}/fromUserAndStatus/${fromUserId}/${status}`, 'GET'),
 	},
 	Mutation: {
 		createNotification: (_, { notifications }) =>
