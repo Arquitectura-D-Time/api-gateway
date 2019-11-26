@@ -20,7 +20,6 @@ input NotificationInput {
 export const notificationQueries = `
     test: [Notification!]
     getById(room_id: String!, token: String!, username: String!): [Notification!]
-    userById(id: Int!): User!
 `;
 
 export const notificationMutations = `

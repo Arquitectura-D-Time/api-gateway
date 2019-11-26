@@ -12,8 +12,8 @@ const resolvers = {
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createNotification: (_, { notification }) =>
-			generalRequest(`${URL}/create`, 'POST', notification),
+		createNotification: (_, { notifications }) =>
+			generalRequest(`${URL}/create`, 'POST', notifications),
 	}
 };
 
