@@ -4,6 +4,14 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import { mergeSchemas } from './utilities';
 
+//notificaciones
+import{
+	notificationsTypeDef,
+	notificationQueries,
+	notificationMutations
+} from './notifications/typeDefs';
+
+//schedule
 import {
 	horarioMutations,
 	horarioQueries,
@@ -16,13 +24,14 @@ import {
 	agendadasTypeDef
 } from './schedule/agendadas/typeDefs';
 
+//attatchment
 import {
 	imagesMutations,
 	imagesQueries,
 	imagesTypeDef
 } from './attatchment/image/typeDefs';
-//UM
 
+//UM
 import {
 	comentariosMutations,
 	comentariosQueries,
@@ -76,6 +85,7 @@ import {
 	tutoriaTypeDef
 } from './tutorias/typeDefs';
 
+//schedule
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
 import imagesResolvers from './attatchment/image/resolvers';
@@ -88,6 +98,9 @@ import estadocuentasResolver from './usermanagement/estadocuentas/ecresolver';
 
 //tutorias
 import tutoriaResolvers from './tutorias/resolvers';
+
+//notificaciones
+import notificationsResolvers from './notifications/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -102,8 +115,8 @@ const mergedTypeDefs = mergeSchemas(
 		sessionsTypeDef,
 		sessionsTypeDefLDAP,
 		userTypeDef,		
-		tutoriaTypeDef
-		
+		tutoriaTypeDef,
+		notificationsTypeDef
 	],
 	[
 		horarioQueries,
@@ -114,7 +127,8 @@ const mergedTypeDefs = mergeSchemas(
 		estadoCuentasQueries,
 		sessionQueries,
 		userQueries,
-		tutoriaQueries
+		tutoriaQueries,
+		notificationQueries
 	],
 	[
 		horarioMutations,
@@ -125,7 +139,8 @@ const mergedTypeDefs = mergeSchemas(
 		estadoCuentasMutations,
 		sessionsMutations,
 		sessionsMutationsLDAP,
-		tutoriaMutations
+		tutoriaMutations,
+		notificationMutations
 	]
 );
 
@@ -143,5 +158,6 @@ export default makeExecutableSchema({
 		authResolvers,
 		userResolvers,
 		ldapResolvers,
-		tutoriaResolvers	)
+		tutoriaResolvers,
+		notificationsResolvers	)
 });
