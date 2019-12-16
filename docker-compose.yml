@@ -7,7 +7,7 @@ services:
       SHOW_URLS: 'true'
 
       # Schedule
-      SCHEDULE_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      SCHEDULE_URL: '34.68.15.162'
       SCHEDULE_PORT: '5003'
       HORARIO_ENTRY: 'horario'
       AGENDADAS_ENTRY: 'agendadas'
