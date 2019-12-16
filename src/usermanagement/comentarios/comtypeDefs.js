@@ -25,6 +25,7 @@ input ComentarioInput2 {
 
 export const comentariosQueries = `
     getComentarios: [Comentario]!
+    comentariosAllById(idcomentado: Int!): [Comentario]!
     comentarioById(idcomento: Int!, idcomentado: Int!): Comentario!
 `;
 

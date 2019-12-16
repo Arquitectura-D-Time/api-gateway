@@ -23,6 +23,16 @@ query {
     }
 }
 
+query {
+    comentariosAllById(idcomentado: 1) {
+        idcomento
+        idcomentado
+        comentario
+        fecha
+        hora
+    }
+}
+
 FUNCIONA BIEN
 creacion comentario
     mutation {
@@ -74,6 +84,14 @@ query {
       	idcalificado
       	calificacion
     }
+}
+
+query {
+    getCalificacionesByID(idcalificado:4){
+    idcalifico
+    idcalificado
+    calificacion
+  }
 }
 
 creacion calificacion CORRECTO

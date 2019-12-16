@@ -1,7 +1,7 @@
 * Registrar Usuario
 mutation{
 	createUser(user: {
-		email: "usernuevo@unal.edu.co"
+		email: "loquesea@loquesea.loquesea"
 		name: "usernuevo"
 		nickname: "usernuevo"
 		password: "123456"
@@ -11,7 +11,6 @@ mutation{
 	email
 	name
 	nickname
-	image
 	token
 	type
 	client
@@ -20,7 +19,7 @@ mutation{
 }
 
 * Iniciar Sesion
-Usuario por defecto ercruzr@unal.edu.co
+Usuario para pruebas ercruzr@unal.edu.co
 
 mutation{
   createSession(session: {
@@ -41,13 +40,24 @@ mutation{
 * Consultar el id del Usuario
 query{
     userById(idUser: 1){
+	id
     name
     nickname
     email
     }
 }
 
-* Validación del token del usuario
+* Consultar todos los usuarios
+query{
+	userAll{
+    id
+    name
+    nickname
+    email
+	}
+}
+
+* Validación del token del usuario (token y client cambian)
 query{
 	validateToken(headers: {
 	token: "fP5AaYSmWTxkPeXC4JyAug"

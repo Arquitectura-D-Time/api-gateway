@@ -1,0 +1,98 @@
+Peticiones GraphiQL - Microservicio de Notificaciones
+
+........................................................
+Queries
+
+query{
+	test{
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getById(_id:"5ddda576c9e77c00012ec12c"){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getByToIdUser(toUserId:1){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getByFromIdUser(fromUserId:2){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getBytoUserStatus(toUserId:1, status:"read"){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+query{
+	getByfromUserStatus(fromUserId:2, status:"unread"){
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}
+
+........................................................
+Mutaciones
+
+mutation{
+  createNotification(notifications:{
+    type: "Alert"
+    description: "Tutoria Perrona"
+    toUserId: 1
+    fromUserId: 2
+    creationDate: "2019-11-20T00:00:00.000+0000"
+    status: "read"
+  }) {
+    _id
+    type
+    description
+    toUserId
+    fromUserId
+    creationDate
+    status
+  }
+}

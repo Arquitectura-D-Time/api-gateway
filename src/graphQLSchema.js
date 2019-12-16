@@ -4,6 +4,14 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import { mergeSchemas } from './utilities';
 
+//notificaciones
+import{
+	notificationsTypeDef,
+	notificationQueries,
+	notificationMutations
+} from './notifications/typeDefs';
+
+//schedule
 import {
 	horarioMutations,
 	horarioQueries,
@@ -16,8 +24,14 @@ import {
 	agendadasTypeDef
 } from './schedule/agendadas/typeDefs';
 
-//UM
+//attatchment
+import {
+	imagesMutations,
+	imagesQueries,
+	imagesTypeDef
+} from './attatchment/image/typeDefs';
 
+//UM
 import {
 	comentariosMutations,
 	comentariosQueries,
@@ -49,11 +63,21 @@ import {
 	userQueries    
 } from './authentication/user/usertypeDef';
 
+// authentication/ldap
+import {
+    sessionsMutationsLDAP,
+    sessionsTypeDefLDAP
+} from './authentication/ldap/ldaptypeDef';
+
 // authentication/auth
 import authResolvers from './authentication/auth/authresolvers';
 
 // authentication/users
 import userResolvers from './authentication/user/userresolvers';
+
+// authentication/ldap
+import ldapResolvers from './authentication/ldap/ldapresolvers';
+
 //tutorias
 import {
 	tutoriaMutations,
@@ -61,9 +85,11 @@ import {
 	tutoriaTypeDef
 } from './tutorias/typeDefs';
 
-
+//schedule
 import horarioResolvers from './schedule/horario/resolvers';
 import agendadasResolvers from './schedule/agendadas/resolvers';
+import imagesResolvers from './attatchment/image/resolvers';
+
 
 //UM
 import comentariosResolver from './usermanagement/comentarios/comresolver';
@@ -73,38 +99,48 @@ import estadocuentasResolver from './usermanagement/estadocuentas/ecresolver';
 //tutorias
 import tutoriaResolvers from './tutorias/resolvers';
 
+//notificaciones
+import notificationsResolvers from './notifications/resolvers';
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		horarioTypeDef,
 		agendadasTypeDef,
+		imagesTypeDef,
 		comentariosTypeDef,
 		calificacionesTypeDef,
 		estadoCuentasTypeDef,
 		sessionsTypeDef,
+		sessionsTypeDefLDAP,
 		userTypeDef,		
-		tutoriaTypeDef
-		
+		tutoriaTypeDef,
+		notificationsTypeDef
 	],
 	[
 		horarioQueries,
 		agendadasQueries,
+		imagesQueries,
 		comentariosQueries,
 		calificacionesQueries,
 		estadoCuentasQueries,
 		sessionQueries,
 		userQueries,
-		tutoriaQueries
+		tutoriaQueries,
+		notificationQueries
 	],
 	[
 		horarioMutations,
 		agendadasMutations,
+		imagesMutations,
 		comentariosMutations,
 		calificacionesMutations,
 		estadoCuentasMutations,
 		sessionsMutations,
-		tutoriaMutations
+		sessionsMutationsLDAP,
+		tutoriaMutations,
+		notificationMutations
 	]
 );
 
@@ -115,11 +151,13 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		horarioResolvers,
 		agendadasResolvers,
+		imagesResolvers,
 		comentariosResolver,
 		calificacionesResolver,
 		estadocuentasResolver,
 		authResolvers,
 		userResolvers,
-		tutoriaResolvers
-	)
+		ldapResolvers,
+		tutoriaResolvers,
+		notificationsResolvers	)
 });
