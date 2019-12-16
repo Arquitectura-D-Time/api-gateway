@@ -13,7 +13,7 @@ services:
       AGENDADAS_ENTRY: 'agendadas'
 
       #attatchment
-      ATTATCHMENT_URL: '146.148.107.218' #ipExternaFija MaquinaDenis
+      ATTATCHMENT_URL: '34.68.15.162' #ipExternaFija MaquinaDenis
       ATTATCHMENT_PORT: '5006'
       IMAGE_ENTRY: 'image'
       
