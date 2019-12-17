@@ -26,7 +26,7 @@ services:
       USERS_ENTRY: 'users'
       
       #Tutorias port
-      TUTORIAS_URL: '146.148.107.218' 
+      TUTORIAS_URL: '34.68.15.162' 
       TUTORIAS_PORT: '5002'
       TUTORIAS_ENTRY: 'tutorias'
 
